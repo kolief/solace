@@ -29,10 +29,6 @@ When RuneLite updates, follow [`mappings/README.md`](mappings/README.md).
 - [Interaction system](docs/INTERACTION_SYSTEM.md)
 - [Mouse movement](docs/MOUSE_MOVEMENT_CUSTOMIZATION.md)
 
-
-With love,
-Kolief & R3C0D3RZ.
-
 P.S. Fuck Burak, we're glad your shitty client got taken down. P.P.S fuck Jim, you're a freak. P.P.P.S, fuck Allure for stealing people's credentials. 
 Shoutout to notBarr for releasing this initialy. 
 
