@@ -1,0 +1,32 @@
+Solace Loader
+=============
+
+This project includes and depends on third-party software:
+
+RuneLite
+--------
+- Components: runelite-client, runelite-api, runelite-cache, runelite-arn
+- License: BSD 2-Clause
+- https://github.com/runelite/runelite
+
+Files derived from or ported from RuneLite (non-exhaustive):
+- ui/src/main/java/net/solace/ui/plugins/ProfilePanel.java
+- ui/src/main/java/net/solace/ui/plugins/ConfigPanelImpl.java
+- ui/src/main/java/net/solace/ui/plugins/PluginListItemImpl.java
+- ui/src/main/java/net/solace/ui/plugins/TopLevelConfigPanel.java
+- plugins/bundled/src/main/java/net/solace/loader/plugins/devtools/
+- plugins/bundled/src/main/java/net/solace/loader/plugins/breakhandler/ui/utils/
+
+Map generator (buildSrc)
+------------------------
+- MapGeneratorPlugin / MapGeneratorTask — Owain94, BSD 2-Clause (see file headers)
+
+PF4J
+----
+- License: Apache License 2.0
+- https://pf4j.org/
+
+Quest Helper (optional runtime integration)
+-------------------------------------------
+- SolaceQuestHelperPlugin reflects into the Quest Helper RuneLite plugin at runtime.
+- Quest Helper is not distributed with this repository.

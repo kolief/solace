@@ -1,0 +1,9 @@
+package net.solace.api.items;
+
+import net.solace.api.domain.items.IItem;
+import net.solace.api.items.IItems;
+
+public interface ITradeInventory
+extends IItems<IItem> {
+}
+

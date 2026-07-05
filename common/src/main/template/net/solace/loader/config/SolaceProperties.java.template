@@ -1,0 +1,24 @@
+package net.solace.loader.config;
+
+public class SolaceProperties implements net.solace.api.util.SolaceProperties {
+    public static final String RUNELITE_VERSION = "@runelite.version@";
+    public static final String LOADER_VERSION = "@solace.version@";
+    public static final String COMMIT_HASH = "@solace.commit.hash@";
+    public static final String BUILD_DATE = "@solace.build.date@";
+
+    public String getRuneLiteVersion() {
+        return RUNELITE_VERSION;
+    }
+
+    public String getLoaderVersion() {
+        return LOADER_VERSION;
+    }
+
+    public String getCommitHash() {
+        return COMMIT_HASH;
+    }
+
+    public String getBuildDate() {
+        return BUILD_DATE;
+    }
+}

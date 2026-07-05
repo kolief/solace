@@ -1,0 +1,65 @@
+package net.solace.loader.plugins.birdhouses.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.experimental.Delegate;
+import lombok.extern.slf4j.Slf4j;
+import net.solace.api.Static;
+
+import java.time.Duration;
+import java.time.Instant;
+
+@AllArgsConstructor
+@Slf4j
+public class BirdHouse {
+    private static final int BIRD_HOUSE_DURATION = (int) Duration.ofMinutes(55).toSeconds(); // Add 5 extra minutes in case of inaccuracy
+
+    @Delegate
+    @Getter
+    private BirdHouseLocation location;
+
+    @Getter
+    @Setter
+    private BirdHouseState state;
+
+    public boolean isComplete() {
+        return getCompletionTimestamp().isBefore(Instant.now());
+    }
+
+    public Instant getBuildTimestamp() {
+        String configValue = Static.getRuneliteConfigManager().getRSProfileConfiguration(
+                "timetracking",
+                String.format("birdhouse.%s", location.getVarp())
+        );
+
+        if (configValue == null) {
+            return Instant.EPOCH;
+        }
+
+        var split = configValue.split(":");
+        if (split.length < 2) {
+            return Instant.EPOCH;
+        }
+
+        return Instant.ofEpochSecond(Long.parseLong(split[1]));
+    }
+
+    public Instant getCompletionTimestamp() {
+        return getBuildTimestamp().plusSeconds(BIRD_HOUSE_DURATION);
+    }
+
+    public Duration getTimeLeft() {
+        return Duration.between(Instant.now(), getCompletionTimestamp());
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "%s, State: %s, %s | Time: %s",
+                location.toString(),
+                state, isComplete() ? "COMPLETED" : "IN_PROGRESS",
+                getTimeLeft().toMinutesPart() + "m " + getTimeLeft().toSecondsPart() + "s"
+        );
+    }
+}
