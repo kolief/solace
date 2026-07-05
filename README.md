@@ -2,6 +2,9 @@
 
 An open source version of you know what client, but with everything bad stripped from it. Solace includes a plugin API and SDK.
 
+<img width="1290" height="612" alt="image" src="https://github.com/user-attachments/assets/37f734a9-b647-4bda-8377-f33eb746ea57" />
+
+
 **Not affiliated with Jagex or RuneLite.** Use at your own risk per the [Jagex Terms of Service](https://www.jagex.com/terms).
 
 ## Requirements
