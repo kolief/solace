@@ -11,9 +11,21 @@ An open source version of you know what client, but with everything bad stripped
 
 ## Build & run
 
+**Production** — fat jar, normal RuneLite (no debug/dev flags):
+
 ```powershell
-.\gradlew build
-.\gradlew :loader-dev:runDev
+.\gradlew buildClient
+.\Solace.bat
+```
+
+Or: `java -jar client/loader/build/libs/solace-0.0.5.jar`
+
+Use `Solace.bat` instead of double-clicking the JAR directly — Windows often launches JARs with `javaw`, which hides errors.
+
+**Development only** — RuneLite `--debug --developer-mode`:
+
+```powershell
+.\gradlew :loader:runDev
 ```
 
 ## External plugins
@@ -30,6 +42,7 @@ When RuneLite updates, follow [`mappings/README.md`](mappings/README.md).
 - [Mouse movement](docs/MOUSE_MOVEMENT_CUSTOMIZATION.md)
 
 P.S. Fuck Burak, we're glad your shitty client got taken down. P.P.S fuck Jim, you're a freak. P.P.P.S, fuck Allure for stealing people's credentials. 
+
 Shoutout to notBarr for releasing this initialy. 
 
 https://storm-client.com

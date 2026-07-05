@@ -11,7 +11,6 @@ include(
     "solace-sdk",
     "bindings",
     "loader",
-    "loader-dev",
     "bundled",
     "hub",
     "ui",
@@ -26,7 +25,6 @@ project(":solace-api").projectDir = file("api")
 project(":solace-sdk").projectDir = file("sdk")
 project(":bindings").projectDir = file("client/bindings")
 project(":loader").projectDir = file("client/loader")
-project(":loader-dev").projectDir = file("client/loader-dev")
 project(":bundled").projectDir = file("plugins/bundled")
 project(":hub").projectDir = file("plugins/hub")
 project(":ui").projectDir = file("ui")

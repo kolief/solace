@@ -1,3 +1,7 @@
+plugins {
+    id("com.github.johnrengelman.shadow") version "8.1.1"
+}
+
 apply<BootstrapPlugin>()
 
 version = rootProject.version
@@ -19,7 +23,6 @@ dependencies {
     bootstrap(projects.collisionMaps)
     blob(projects.collisionMaps)
 
-    // already in RL's classpath
     compileOnly(libs.runelite.client) {
         exclude(group = "com.squareup.okhttp3", module = "okhttp")
     }
@@ -28,6 +31,11 @@ dependencies {
     compileOnly(libs.jetbrains.annotations)
     compileOnly(libs.lombok)
     annotationProcessor(libs.lombok)
+
+    // bundled into the production fat jar only (shadowJar), not the library jar
+    implementation(libs.runelite.client)
+    implementation(libs.runelite.api)
+    implementation(libs.runelite.jshell)
 
     implementation(libs.gson)
     implementation(libs.pf4j) {
@@ -43,6 +51,7 @@ dependencies {
     implementation(libs.kotlin.stdlib)
     implementation(libs.reactivex.rxjava3)
     implementation(libs.eclipse.collections)
+    implementation(libs.guice)
 
     implementation(projects.solaceApi)
     implementation(projects.collisionMaps)
@@ -69,5 +78,37 @@ tasks {
 
     withType<BootstrapTask> {
         mainJarFile.set(file("${project.projectDir}/build/libs/${project.name}-${project.version}.jar"))
+        dependsOn(jar)
+    }
+
+    shadowJar {
+        group = "solace"
+        description = "Build the production Solace fat jar"
+        archiveBaseName.set("solace")
+        archiveClassifier.set("")
+        dependsOn(jar)
+        manifest {
+            attributes["Main-Class"] = "net.solace.loader.SolaceLauncher"
+        }
+        mergeServiceFiles()
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+        exclude(
+            "META-INF/*.SF",
+            "META-INF/*.DSA",
+            "META-INF/*.RSA",
+        )
+    }
+
+    register<JavaExec>("runDev") {
+        group = "solace"
+        description = "Run Solace with RuneLite debug and developer-mode flags"
+        dependsOn(classes)
+        classpath = sourceSets["main"].runtimeClasspath
+        mainClass.set("net.solace.loader.SolaceLoaderDev")
+        jvmArgs("-Drunelite.launcher.version=dev")
+    }
+
+    named("build") {
+        dependsOn(shadowJar)
     }
 }

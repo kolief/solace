@@ -73,7 +73,7 @@ public final class CanonicalMappingConverter {
             }
 
             for (var method : canonicalClass.methods) {
-                if (!isNamedMember(method.name)) {
+                if (!isNamedMember(method.name) || !isValidMethodMapping(method.name, method.obfuscatedName)) {
                     continue;
                 }
 
@@ -137,6 +137,16 @@ public final class CanonicalMappingConverter {
 
     private static boolean isNamedMember(String name) {
         return name != null && !name.isBlank() && !"<init>".equals(name) && !"<clinit>".equals(name);
+    }
+
+    private static boolean isValidMethodMapping(String name, String obfuscatedName) {
+        if (obfuscatedName == null || obfuscatedName.isBlank()) {
+            return false;
+        }
+        if ("<init>".equals(obfuscatedName) || "<clinit>".equals(obfuscatedName)) {
+            return "<init>".equals(name) || "<clinit>".equals(name);
+        }
+        return true;
     }
 
     private static boolean isCrossClassMember(String logicalOwner, String obfuscatedOwner, String className, String classObf) {

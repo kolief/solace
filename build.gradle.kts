@@ -52,4 +52,10 @@ tasks {
         classpath = project(":mappings-generator").extensions.getByType<SourceSetContainer>()["main"].runtimeClasspath
         mainClass.set("net.solace.mappings.generator.MappingGenerator")
     }
+
+    register("buildClient") {
+        group = "solace"
+        description = "Build the production Solace fat jar"
+        dependsOn(":loader:shadowJar")
+    }
 }

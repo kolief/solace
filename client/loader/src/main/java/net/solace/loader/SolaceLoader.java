@@ -24,6 +24,7 @@ public class SolaceLoader {
             );
         } catch (Exception e) {
             log.error("An error occurred during launch.", e);
+            SolaceLauncher.showFatal("Solace failed to inject into RuneLite.", e);
         }
     }
 
