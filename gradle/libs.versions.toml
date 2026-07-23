@@ -1,6 +1,6 @@
 [versions]
 # provided
-rl = "1.12.31.1"
+rl = "1.12.33"
 lombok = "1.18.30"
 guice = "4.1.0"
 jetbrains-annotations = "23.0.0"
