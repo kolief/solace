@@ -48,8 +48,8 @@ P.S. Fuck Burak, we're glad your shitty client got taken down. P.P.S fuck Jim, y
 
 Shoutout to notBarr for releasing this initialy. 
 
-https://storm-client.com
-https://discord.gg/ezFHE4qXQG
+- https://storm-client.com
+- https://discord.gg/ezFHE4qXQG
 
 ## License
 
