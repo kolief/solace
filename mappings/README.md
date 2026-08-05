@@ -7,7 +7,7 @@ Obfuscation mappings for the pinned RuneLite revision. The loader ships `version
 1. Download old and new `injected-client-*.jar` into `mappings/jars/` (gitignored).
 
 ```powershell
-$version = "1.12.34.1"
+$version = "1.12.35"
 Invoke-WebRequest `
   -Uri "https://repo.runelite.net/net/runelite/injected-client/$version/injected-client-$version.jar" `
   -OutFile "mappings/jars/injected-client-$version.jar"

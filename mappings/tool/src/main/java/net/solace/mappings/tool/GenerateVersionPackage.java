@@ -9,11 +9,11 @@ import java.nio.file.Path;
  * Converts Solace MappingGenerator canonical JSON into {@code version-package.json}.
  *
  * Usage:
- *   --canonical mappings/canonical/mappings-1.12.34.1.json
+ *   --canonical mappings/canonical/mappings-1.12.35.json
  *   [--inject-client path/to/injected-client.jar]
  *   [--merge mappings/version-package.json]
- *   --version 1.12.34.1
- *   --commit fa00725
+ *   --version 1.12.35
+ *   --commit 6ea819d
  *   --output mappings/version-package.json
  */
 public final class GenerateVersionPackage {
