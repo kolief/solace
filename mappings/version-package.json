@@ -1,14 +1,20 @@
 {
   "classMappings": [
     {
-      "name": "Player",
-      "obfName": "cb",
+      "name": "AccountType",
+      "obfName": "aap",
       "fields": [
         {
-          "name": "actions",
-          "obfName": "ap",
-          "typeDesc": "[Ljava/lang/String;",
-          "isStatic": false
+          "name": "jagexType",
+          "obfName": "af",
+          "typeDesc": "Laap;",
+          "isStatic": true
+        },
+        {
+          "name": "legacyType",
+          "obfName": "az",
+          "typeDesc": "Laap;",
+          "isStatic": true
         }
       ],
       "methods": []
@@ -18,38 +24,20 @@
       "obfName": "client",
       "fields": [
         {
-          "name": "packedCallStack1",
-          "obfName": "mi",
-          "typeDesc": "Ljava/lang/String;",
-          "isStatic": true
-        },
-        {
-          "name": "packedCallStack2",
-          "obfName": "td",
-          "typeDesc": "Ljava/lang/String;",
-          "isStatic": true
-        },
-        {
           "name": "packetWriter",
-          "obfName": "ad",
-          "typeDesc": "Ldw;",
+          "obfName": "ai",
+          "typeDesc": "Ldj;",
           "isStatic": true
         },
         {
           "name": "accountTypeCheck",
-          "obfName": "da",
-          "typeDesc": "Lzd;",
-          "isStatic": true
-        },
-        {
-          "name": "heading",
-          "obfName": "lz",
-          "typeDesc": "I",
+          "obfName": "dm",
+          "typeDesc": "Laap;",
           "isStatic": true
         },
         {
           "name": "mouseLastPressedTimeMillis",
-          "obfName": "gx",
+          "obfName": "gr",
           "typeDesc": "J",
           "isStatic": true
         },
@@ -60,113 +48,137 @@
           "isStatic": true
         },
         {
-          "name": "randomDat",
-          "obfName": "lw",
-          "typeDesc": "[B",
-          "isStatic": true
-        },
-        {
           "name": "logger",
-          "obfName": "br",
+          "obfName": "xo",
           "typeDesc": "Lorg/slf4j/Logger;",
           "isStatic": true
         },
         {
+          "name": "packedCallStack1",
+          "obfName": "bk",
+          "typeDesc": "Ljava/lang/String;",
+          "isStatic": true
+        },
+        {
+          "name": "randomDat",
+          "obfName": "lx",
+          "typeDesc": "[B",
+          "isStatic": true
+        },
+        {
+          "name": "packedCallStack2",
+          "obfName": "hy",
+          "typeDesc": "Ljava/lang/String;",
+          "isStatic": true
+        },
+        {
+          "name": "heading",
+          "obfName": "lc",
+          "typeDesc": "I",
+          "isStatic": true
+        },
+        {
           "name": "runeLiteDir",
-          "obfName": "zp",
+          "obfName": "bs",
           "typeDesc": "Ljava/io/File;",
           "isStatic": false
         },
         {
-          "name": "insecureWriteCredentials",
-          "obfName": "pp",
-          "typeDesc": "Z",
+          "name": "scriptVmMaxOps",
+          "obfName": "dy",
+          "typeDesc": "I",
           "isStatic": false
         },
         {
           "name": "scriptVmWarningOps",
-          "obfName": "xe",
+          "obfName": "se",
           "typeDesc": "I",
           "isStatic": false
         },
         {
-          "name": "scriptVmMaxOps",
-          "obfName": "sp",
-          "typeDesc": "I",
+          "name": "insecureWriteCredentials",
+          "obfName": "hg",
+          "typeDesc": "Z",
           "isStatic": false
         }
       ],
       "methods": [
         {
+          "name": "processServerPacket",
+          "obfName": "ia",
+          "typeDesc": "(Ldj;I)Z",
+          "isStatic": false
+        },
+        {
           "name": "mouseHookLoader",
-          "obfName": "mt",
+          "obfName": "mv",
           "typeDesc": "()V",
           "isStatic": true
         },
         {
-          "name": "callStackPacker1",
-          "obfName": "za",
-          "typeDesc": "()V",
+          "name": "doAction",
+          "obfName": "uj",
+          "typeDesc": "(IIIIIILjava/lang/String;Ljava/lang/String;II)V",
           "isStatic": true
         },
         {
           "name": "callStackCheck",
-          "obfName": "qa",
+          "obfName": "nv",
           "typeDesc": "(J)Ljava/lang/String;",
           "isStatic": true
         },
         {
-          "name": "processServerPacket",
-          "obfName": "ib",
-          "typeDesc": "(Ldw;B)Z",
-          "isStatic": false
+          "name": "callStackPacker1",
+          "obfName": "np",
+          "typeDesc": "()V",
+          "isStatic": true
         },
         {
           "name": "callStackPacker2",
-          "obfName": "aef",
+          "obfName": "ady",
           "typeDesc": "()V",
           "isStatic": false
         }
       ]
     },
     {
-      "name": "MouseRecorder",
-      "obfName": "dv",
-      "fields": [],
-      "methods": [
+      "name": "Player",
+      "obfName": "ct",
+      "fields": [
         {
-          "name": "run",
-          "obfName": "run",
-          "typeDesc": "()V",
+          "name": "actions",
+          "obfName": "ax",
+          "typeDesc": "[Ljava/lang/String;",
           "isStatic": false
         }
-      ]
+      ],
+      "methods": []
     },
     {
       "name": "PacketWriter",
-      "obfName": "dw",
+      "obfName": "dj",
       "fields": [
         {
           "name": "isaacCipher",
-          "obfName": "aa",
-          "typeDesc": "Lxs;",
+          "obfName": "ab",
+          "typeDesc": "Lyt;",
           "isStatic": false
         },
         {
           "name": "serverPacketBuffer",
-          "obfName": "as",
-          "typeDesc": "Lxv;",
+          "obfName": "ag",
+          "typeDesc": "Lxs;",
           "isStatic": false
         },
         {
           "name": "serverPacket",
-          "obfName": "ab",
-          "typeDesc": "Ljc;",
+          "obfName": "as",
+          "typeDesc": "Ljj;",
           "isStatic": false
         },
         {
           "name": "serverPacketLength",
-          "obfName": "ap",
+          "obfName": "ax",
           "typeDesc": "I",
           "isStatic": false
         }
@@ -175,43 +187,24 @@
         {
           "name": "addNode",
           "obfName": "ae",
-          "typeDesc": "(Ljr;I)V",
+          "typeDesc": "(Ljl;I)V",
           "isStatic": false
         }
       ]
     },
     {
       "name": "ServerPacket",
-      "obfName": "jc",
+      "obfName": "jj",
       "fields": [
         {
           "name": "id",
-          "obfName": "fr",
+          "obfName": "fc",
           "typeDesc": "I",
           "isStatic": false
         },
         {
           "name": "length",
-          "obfName": "fy",
-          "typeDesc": "I",
-          "isStatic": false
-        }
-      ],
-      "methods": []
-    },
-    {
-      "name": "ClientPacket",
-      "obfName": "jf",
-      "fields": [
-        {
-          "name": "length",
-          "obfName": "ez",
-          "typeDesc": "I",
-          "isStatic": false
-        },
-        {
-          "name": "id",
-          "obfName": "eu",
+          "obfName": "fm",
           "typeDesc": "I",
           "isStatic": false
         }
@@ -220,18 +213,37 @@
     },
     {
       "name": "PacketBufferNode",
-      "obfName": "jr",
+      "obfName": "jl",
       "fields": [
         {
-          "name": "clientPacket",
-          "obfName": "ax",
-          "typeDesc": "Ljf;",
+          "name": "packetBuffer",
+          "obfName": "ac",
+          "typeDesc": "Lxs;",
           "isStatic": false
         },
         {
-          "name": "packetBuffer",
-          "obfName": "al",
-          "typeDesc": "Lxv;",
+          "name": "clientPacket",
+          "obfName": "as",
+          "typeDesc": "Ljs;",
+          "isStatic": false
+        }
+      ],
+      "methods": []
+    },
+    {
+      "name": "ClientPacket",
+      "obfName": "js",
+      "fields": [
+        {
+          "name": "id",
+          "obfName": "er",
+          "typeDesc": "I",
+          "isStatic": false
+        },
+        {
+          "name": "length",
+          "obfName": "eo",
+          "typeDesc": "I",
           "isStatic": false
         }
       ],
@@ -239,17 +251,17 @@
     },
     {
       "name": "Task",
-      "obfName": "mi",
+      "obfName": "mj",
       "fields": [
         {
           "name": "result",
-          "obfName": "as",
+          "obfName": "ag",
           "typeDesc": "Ljava/lang/Object;",
           "isStatic": false
         },
         {
           "name": "objectArgument",
-          "obfName": "al",
+          "obfName": "ac",
           "typeDesc": "Ljava/lang/Object;",
           "isStatic": false
         }
@@ -258,11 +270,11 @@
     },
     {
       "name": "ItemComposition",
-      "obfName": "oz",
+      "obfName": "op",
       "fields": [
         {
           "name": "groundActions",
-          "obfName": "ey",
+          "obfName": "eh",
           "typeDesc": "[Ljava/lang/String;",
           "isStatic": false
         }
@@ -270,36 +282,49 @@
       "methods": []
     },
     {
+      "name": "GameEngine",
+      "obfName": "tq",
+      "fields": [],
+      "methods": [
+        {
+          "name": "graphicsTick",
+          "obfName": "ul",
+          "typeDesc": "()V",
+          "isStatic": false
+        }
+      ]
+    },
+    {
       "name": "MouseHandler",
-      "obfName": "sw",
+      "obfName": "tz",
       "fields": [
         {
-          "name": "MouseHandler_y",
-          "obfName": "ax",
+          "name": "MouseHandler_x",
+          "obfName": "ag",
           "typeDesc": "I",
           "isStatic": true
         },
         {
-          "name": "MouseHandler_instance",
-          "obfName": "ak",
-          "typeDesc": "Lsw;",
-          "isStatic": true
-        },
-        {
-          "name": "MouseHandler_idleCycles",
-          "obfName": "ab",
+          "name": "MouseHandler_y",
+          "obfName": "as",
           "typeDesc": "I",
           "isStatic": true
         },
         {
           "name": "MouseHandler_lastPressedTimeMillis",
-          "obfName": "ap",
+          "obfName": "ax",
           "typeDesc": "J",
           "isStatic": true
         },
         {
-          "name": "MouseHandler_x",
-          "obfName": "as",
+          "name": "MouseHandler_instance",
+          "obfName": "aj",
+          "typeDesc": "Ltz;",
+          "isStatic": true
+        },
+        {
+          "name": "MouseHandler_idleCycles",
+          "obfName": "ay",
           "typeDesc": "I",
           "isStatic": true
         }
@@ -307,25 +332,12 @@
       "methods": []
     },
     {
-      "name": "GameEngine",
-      "obfName": "tj",
-      "fields": [],
-      "methods": [
-        {
-          "name": "graphicsTick",
-          "obfName": "resizeCanvas",
-          "typeDesc": "()V",
-          "isStatic": false
-        }
-      ]
-    },
-    {
       "name": "PlatformInfo",
-      "obfName": "vs",
+      "obfName": "vt",
       "fields": [
         {
           "name": "clientName",
-          "obfName": "cx",
+          "obfName": "ca",
           "typeDesc": "Ljava/lang/String;",
           "isStatic": false
         }
@@ -333,8 +345,8 @@
       "methods": [
         {
           "name": "write",
-          "obfName": "ag",
-          "typeDesc": "(Lxm;I)V",
+          "obfName": "az",
+          "typeDesc": "(Lxy;I)V",
           "isStatic": false
         },
         {
@@ -347,38 +359,19 @@
     },
     {
       "name": "Buffer",
-      "obfName": "xm",
+      "obfName": "xy",
       "fields": [
-        {
-          "name": "offset",
-          "obfName": "ab",
-          "typeDesc": "I",
-          "isStatic": false
-        },
         {
           "name": "array",
-          "obfName": "ak",
+          "obfName": "aj",
           "typeDesc": "[B",
           "isStatic": false
-        }
-      ],
-      "methods": []
-    },
-    {
-      "name": "AccountType",
-      "obfName": "zd",
-      "fields": [
-        {
-          "name": "jagexType",
-          "obfName": "af",
-          "typeDesc": "Lzd;",
-          "isStatic": true
         },
         {
-          "name": "legacyType",
-          "obfName": "ag",
-          "typeDesc": "Lzd;",
-          "isStatic": true
+          "name": "offset",
+          "obfName": "ay",
+          "typeDesc": "I",
+          "isStatic": false
         }
       ],
       "methods": []
@@ -387,55 +380,55 @@
   "staticFields": [
     {
       "name": "MouseHandler_instance",
-      "obfName": "ak",
-      "owner": "sw",
-      "typeDesc": "Lsw;"
+      "obfName": "aj",
+      "owner": "tz",
+      "typeDesc": "Ltz;"
     },
     {
       "name": "MouseHandler_idleCycles",
-      "obfName": "ab",
-      "owner": "sw",
+      "obfName": "ay",
+      "owner": "tz",
       "typeDesc": "I"
     },
     {
       "name": "JX_DISPLAY_NAME",
-      "obfName": "lx",
-      "owner": "lo",
+      "obfName": "cm",
+      "owner": "bf",
       "typeDesc": "Ljava/lang/String;"
     },
     {
       "name": "JX_CHARACTER_ID",
-      "obfName": "bk",
-      "owner": "bx",
+      "obfName": "bv",
+      "owner": "bf",
       "typeDesc": "Ljava/lang/String;"
     },
     {
       "name": "JX_SESSION_ID",
-      "obfName": "ln",
-      "owner": "et",
+      "obfName": "lb",
+      "owner": "at",
       "typeDesc": "Ljava/lang/String;"
     },
     {
       "name": "JX_REFRESH_TOKEN",
-      "obfName": "li",
-      "owner": "vi",
+      "obfName": "lz",
+      "owner": "ch",
       "typeDesc": "Ljava/lang/String;"
     },
     {
       "name": "JX_ACCESS_TOKEN",
-      "obfName": "lg",
-      "owner": "tt",
+      "obfName": "lh",
+      "owner": "lt",
       "typeDesc": "Ljava/lang/String;"
     },
     {
       "name": "client",
-      "obfName": "cr",
-      "owner": "uw",
+      "obfName": "cz",
+      "owner": "oe",
       "typeDesc": "Lclient;"
     },
     {
       "name": "graphicsGuard",
-      "obfName": "kz",
+      "obfName": "kb",
       "owner": "client",
       "typeDesc": "Z"
     }
@@ -443,90 +436,82 @@
   "staticMethods": [
     {
       "name": "getPacketBufferNode",
-      "obfName": "ag",
-      "owner": "xt",
+      "obfName": "af",
+      "owner": "ef",
       "expectedTypeDesc": "",
-      "typeDesc": "(Ljf;Lxs;I)Ljr;"
-    },
-    {
-      "name": "doAction",
-      "obfName": "fu",
-      "owner": "ek",
-      "expectedTypeDesc": "",
-      "typeDesc": "(IIIIIILjava/lang/String;Ljava/lang/String;III)V"
+      "typeDesc": "(Ljs;Lyt;B)Ljl;"
     },
     {
       "name": "setLoginIndex",
-      "obfName": "ah",
-      "owner": "xo",
+      "obfName": "ar",
+      "owner": "ci",
       "expectedTypeDesc": "",
       "typeDesc": "(IB)V"
     },
     {
       "name": "newRunException",
       "obfName": "af",
-      "owner": "bz",
+      "owner": "eg",
       "expectedTypeDesc": "",
-      "typeDesc": "(Ljava/lang/Throwable;Ljava/lang/String;)Laai;"
+      "typeDesc": "(Ljava/lang/Throwable;Ljava/lang/String;)Laaf;"
     },
     {
       "name": "callStackCombiner",
-      "obfName": "ao",
-      "owner": "ej",
+      "obfName": "br",
+      "owner": "gp",
       "expectedTypeDesc": "",
       "typeDesc": "(I)Ljava/lang/String;"
     },
     {
       "name": "constructChat",
-      "obfName": "ag",
-      "owner": "xv",
+      "obfName": "az",
+      "owner": "cx",
       "expectedTypeDesc": "",
-      "typeDesc": "(ILjava/lang/String;Lxo;II)Ljr;"
+      "typeDesc": "(ILjava/lang/String;Lxo;II)Ljl;"
     },
     {
       "name": "processError",
       "obfName": "ae",
-      "owner": "aai",
+      "owner": "aaf",
       "expectedTypeDesc": "",
       "typeDesc": "(Ljava/lang/String;Ljava/lang/Throwable;)V"
     },
     {
       "name": "getLoginError",
-      "obfName": "za",
-      "owner": "client",
+      "obfName": "be",
+      "owner": "zj",
       "expectedTypeDesc": "",
       "typeDesc": "(I)V"
     },
     {
       "name": "setLoginResponse",
-      "obfName": "ce",
-      "owner": "bx",
+      "obfName": "al",
+      "owner": "ab",
       "expectedTypeDesc": "",
-      "typeDesc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V"
+      "typeDesc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V"
     }
   ],
   "garbage": {
-    "PlatformInfo.getDeviceId": "653286801",
-    "MouseHandler_y": "-524263433",
-    "MouseHandler_x": "363237937",
-    "setLoginIndex": "-93",
-    "mouseLastPressedTimeMillis": "7526403062401210517",
-    "doAction": "-1612500198",
-    "getPacketBufferNode": "-46",
-    "constructChat": "-2147483648",
-    "MouseHandler_lastPressedTimeMillis": "1699404853799035861",
-    "PacketWriter.serverPacketLength": "1933009199",
-    "ClientPacket.length": "1722046599",
-    "PacketWriter.addNode": "-10",
-    "ServerPacket.length": "-1434798577",
-    "getLoginError": "4",
-    "heading": "1789475505",
-    "MouseHandler_idleCycles": "175345819",
+    "MouseHandler_idleCycles": "1518272873",
+    "PacketWriter.serverPacketLength": "-1881535213",
+    "ClientPacket.id": "-910918935",
     "PlatformInfo.write": "-128",
-    "Buffer.offset": "-1278253407",
-    "ServerPacket.id": "276731839",
-    "ClientPacket.id": "2090363519"
+    "constructChat": "-2147483648",
+    "ClientPacket.length": "-1719371919",
+    "PlatformInfo.getDeviceId": "653286801",
+    "setLoginIndex": "-93",
+    "MouseHandler_lastPressedTimeMillis": "-8856107039955175897",
+    "MouseHandler_x": "-52112879",
+    "MouseHandler_y": "-576477041",
+    "getLoginError": "4",
+    "ServerPacket.id": "2135382271",
+    "ServerPacket.length": "111526941",
+    "mouseLastPressedTimeMillis": "3775164370123526045",
+    "PacketWriter.addNode": "-10",
+    "Buffer.offset": "-1095856699",
+    "doAction": "1",
+    "getPacketBufferNode": "-46"
   },
-  "runeLiteVersion": "1.12.33",
-  "runeLiteCommit": "12e5bee"
+  "runeLiteVersion": "1.12.34.1",
+  "runeLiteCommit": "fa00725"
 }
